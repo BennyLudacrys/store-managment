@@ -24,6 +24,17 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+//	session for integrated testes dependencies
+	implementation platform('org.testcontainers:testcontainers-bom:1.17.6') //import bom
+	testImplementation('org.testcontainers:mysql') //no version specified
+
+	testImplementation "org.testcontainers:mongodb"
+
+	testImplementation "org.testcontainers:junit-jupiter"
+
+
 }
 
 tasks.named('test') {
